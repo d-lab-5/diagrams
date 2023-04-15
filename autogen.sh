@@ -4,7 +4,7 @@ set -e
 app_root_dir="diagrams"
 
 # NOTE: azure icon set is not latest version
-providers=("onprem" "aws" "azure" "digitalocean" "gcp" "ibm" "firebase" "k8s" "alibabacloud" "oci" "programming" "saas" "elastic" "generic" "openstack" "outscale" "sap" )
+providers=("onprem" "aws" "azure" "digitalocean" "gcp" "ibm" "firebase" "k8s" "alibabacloud" "oci" "programming" "saas" "elastic" "generic" "openstack" "outscale" "sap" "homematic" "nodered")
 
 if ! [ -x "$(command -v round)" ]; then
   echo 'round is not installed'
@@ -28,6 +28,19 @@ fi
 
 # preprocess the resources
 for pvd in "${providers[@]}"; do
+  # Set the directory name
+  dir_name="diagrams/$pvd"
+
+  # Check if the directory exists
+  if [ ! -d "$dir_name" ]; then
+    # Create the directory if it doesn't exist
+    #mkdir "$dir_name"
+    echo "Directory created: $dir_name"
+  else
+    # The directory already exists
+    echo "Directory already exists: $dir_name"
+  fi
+
   # convert the svg to png for azure provider
   if [ "$pvd" = "onprem" ] || [ "$pvd" = "azure" ]; then
     echo "converting the svg to png using inkscape for provider '$pvd'"
