@@ -229,6 +229,13 @@ Node classes list of azure provider.
 - **diagrams.azure.network.VirtualNetworks**
 - **diagrams.azure.network.VirtualWans**
 
+## azure.sapvis
+
+- **diagrams.azure.sapvis.SAPVisAppServerInstance**
+- **diagrams.azure.sapvis.SAPVisCentralServiceInstance**
+- **diagrams.azure.sapvis.SAPVisDatabaseInstance**
+- **diagrams.azure.sapvis.VirtualInstanceForSAP**
+
 ## azure.security
 
 - **diagrams.azure.security.ApplicationSecurityGroups**
